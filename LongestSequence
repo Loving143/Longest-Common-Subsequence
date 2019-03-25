@@ -1,0 +1,63 @@
+import java.util.*;
+import java.util.Scanner;
+public class LongestSequence {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc=new Scanner (System.in);
+		//here we are taking two strings 
+		System.out.println("Please Enter the strings ");
+            String gh=sc.next();
+			String cf=sc.next();
+			char ch1 []=new char[gh.length()];
+			char ch2[]=new char[cf.length()];
+			for(int i=0;i<gh.length();i++)
+			{
+				ch1=gh.toCharArray();      //converting the strings to character array 
+			}
+			for(int i=0;i<cf.length();i++)  // //converting the strings to character array 
+			{
+				ch2=cf.toCharArray();
+			}
+		ArrayList l=new ArrayList();   //Dynamic array creation
+		ArrayList l1=new ArrayList();
+		ArrayList l2=new ArrayList();
+		
+		
+		for(int i=0;i<gh.length();i++){
+			l.add(ch1[i]);               //adding characters into the dynamic array 
+		}
+	
+		System.out.println();
+             
+		int j=0;                        //here j=0;its because as the jbecomes equal to the size of list 
+		                                //then we will have to initialize it with 0
+		
+				for(int i=0;i<cf.length();i++)
+				{
+					l1.add(ch2[i]);     //adding the characters into second list created .
+				}
+				System.out.println();
+				for(int i=0;i<l.size();i++)
+				{
+					j=0;
+					while(j<l1.size())
+					{
+						if(l.get(i).equals(l1.get(j)))
+						{
+							l2.add(l.get(i));
+						}
+						j++;
+					}
+				}
+				int i=0;
+				j=i+1;
+				
+				HashSet s=new HashSet();
+				s.addAll(l2);
+			    System.out.println("The Longest Common Sequence is\n"+s);
+				
+				
+	
+}
+}
